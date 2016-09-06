@@ -11,63 +11,14 @@
       <h1>Test Project</h1>
       <form method="post" id="chartinput">
             Monthly Savings Rate:
-            <input type="text" name="rate" id="rate" onChange=chartInput(this.form)> Savings Goal:
+            <input type="text" name="rate" id="rate" onChange=chartInput(this.form)> 
+            
+            Savings Goal:
             <input type="text" name="goal" id="goal" onChange=chartInput(this.form)>
       </form>
       <p>&nbsp;</p>
       <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
-      <script language="JavaScript">
-            
-            function chartInput(form) {
-                  var rate = form.rate.value;
-                  var goal = form.goal.value;
-
-                  var rest = goal%rate;
-                  if(rest==0){
-                        var months = goal/rate;
-                  }
-                  else {
-                        var months = Math.floor(goal/rate)+1;
-                  }
-
-                  var i;
-                  var numMonths=[];
-                  for(i=1; i<=months; i++){
-                        numMonths.push(i);
-                  }
-
-                  var values=[];
-                  for(i=1; i<=months; i++){
-                       values.push(rate*(Math.pow(1.004, i)-1)/0.004);
-            }
-
-      $(function () {
-    $('#container').highcharts({
-        title: {
-            text: 'Your Savings',
-        },
-        xAxis: {
-            categories: numMonths
-        },
-        yAxis: {
-            title: {
-                text: 'Amount Reached'
-            },
-            plotLines: [{
-                value: 0,
-                width: 1,
-                color: '#808080'
-            }]
-        },
-        series: [{
-            data: values
-        }]
-    });
-}); 
-            }
-
-      
-</script>
+      <script src="graph.js"></script>
 </body>
 
 </html>
