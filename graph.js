@@ -16,8 +16,9 @@ function chartInput(form) {
       }
 
       var values = [];
+      var interestRate = 1.004;
       for (i = 1; i <= months; i++) {
-            values.push(rate * (Math.pow(1.004, i) - 1) / 0.004);
+            values.push(rate * (Math.pow(interestRate, i) - 1) / (interestRate - 1));
       }
 
       $(function() {
