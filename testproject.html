@@ -11,9 +11,8 @@
       <h1>Test Project</h1>
       <form method="post" id="chartinput">
             Monthly Savings Rate:
-            <input type="text" name="rate" id="rate"> Savings Goal:
-            <input type="text" name="goal" id="goal">
-            <input type="button" name="button" value="Apply" onClick="chartInput(this.form)">
+            <input type="text" name="rate" id="rate" onChange=chartInput(this.form)> Savings Goal:
+            <input type="text" name="goal" id="goal" onChange=chartInput(this.form)>
       </form>
       <p>&nbsp;</p>
       <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
