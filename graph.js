@@ -1,14 +1,13 @@
 function calculate(rate, goal) {
     var rest = goal % rate;
       if (rest == 0) {
-            var months = goal / rate;
+            var months = goal/rate;
       } else {
-            var months = Math.floor(goal / rate) + 1;
+            var months = Math.floor(goal/rate)+1;
       }
 
       var i;
       var numMonths = [];
-
       var values = [];
       var interestRate = 1.004;
       for (i = 1; i <= months; i++) {
