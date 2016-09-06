@@ -23,9 +23,9 @@ function chartInput(form) {
       var rate = form.rate.value;
       var goal = form.goal.value;
 
-      var res = calculate(rate, goal);
-      var values = res[0];
-      var numMonths = res[1];
+      var result = calculate(rate, goal);
+      var values = result[0];
+      var numMonths = result[1];
 
       $(function() {
             $('#container').highcharts({
