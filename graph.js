@@ -7,14 +7,15 @@ function calculate(rate, goal) {
       }
 
       var i;
-      var numMonths = [];
+      var numMonths = 0;
       var values = [];
       var interestRate = 1.004;
       for (i = 1; i <= months; i++) {
-            numMonths.push(i);
+            numMonths++;
             values.push(rate * (Math.pow(interestRate, i) - 1) / (interestRate - 1));
       }
 
+      console.log(values, numMonths);
       return [values, numMonths];
 }
 
